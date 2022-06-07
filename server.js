@@ -162,7 +162,7 @@ app.get('/api/:club_name', (request, response) =>{
         response.json(golfCourse['unknown'])
     }
 })
-
-app.listen(PORT, ()=>{
+//for heroku we will use environment variable for port.
+app.listen(process.env.PORT || PORT, ()=>{
     console.log(`The server is now running on port ${PORT}`)
 })
